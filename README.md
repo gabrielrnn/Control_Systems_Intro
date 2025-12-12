@@ -7,4 +7,4 @@ Considerando esse escopo, pretendo escrever essa documentação, pelo menos a pr
 
 # "Hello World!"
 Vamos começar com um caso que eu considero mais como um teste de sanidade do que qualquer outra coisa: o pêndulo simples:
-![Diagrama esquemático do pêndulo simples.](\simple_pendulum.png)
+![Diagrama esquemático do pêndulo simples.](/simple_pendulum.png)
