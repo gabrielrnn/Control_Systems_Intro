@@ -6,4 +6,5 @@ Depois de um tempo estudando controle, comecei a ter a vontade de criar um proje
 Considerando esse escopo, pretendo escrever essa documentação, pelo menos a princípio, de maneira bem direta. No entanto, é possível que eu vá adicionando seções mais detalhadas conforme o projeto fique mais completo. 
 
 # "Hello World!"
-Vamos começar com um caso que eu considero mais como um teste de sanidade do que qualquer outra coisa: o pêndulo simples. 
+Vamos começar com um caso que eu considero mais como um teste de sanidade do que qualquer outra coisa: o pêndulo simples:
+![Diagrama esquemático do pêndulo simples.](\images\simple_pendulum.png)
