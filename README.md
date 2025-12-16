@@ -9,3 +9,5 @@ Considerando esse escopo, pretendo escrever essa documentação, pelo menos a pr
 Vamos começar com um caso que eu considero mais como um teste de sanidade do que qualquer outra coisa: o pêndulo simples:
 
 ![Diagrama esquemático do pêndulo simples.](/simple_pendulum.png)
+
+Eu considero esse sistema como uma espécie de "Hello World!" para sistemas de controle, uma vez que ele é extremamente simples, e qualquer pessoa que tenha feito algum curso de física básica já viu esse exemplo alguma vez na vida. A ideia de usar esse exemplo é uma forma de testar de forma rápida novas metodologias, assim como testar abordagens novas de estruturar o projeto e seus requisitos. Basicamente, vamos usar esse exemplo para testar qualquer coisa que possa ser usada em um sistema mais complexo como uma forma de "sanity check". 
