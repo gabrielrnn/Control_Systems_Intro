@@ -2,6 +2,7 @@ clearvars
 close all 
 clc
 
+global g
 omega_0 = 3;
 T = 2*pi/omega_0;
 b = 1;
@@ -26,11 +27,12 @@ K = [7 8];
 vars = [k1 k2];
 lambdas = subs(lambdas, vars, K);
 Kr = -1/(C/(A-B*K)*B);
-r = 45*d2r;
+r = 70*d2r;
 %% System simulation and sanity checks 
-
-t = linspace(0,5,100);
-x0 = [0*d2r;0];
+ti = 0;
+tf = 10;
+t = linspace(ti,tf,100);
+x0 = [45*d2r;0];
 [~, xL] = ode45(@(t,x) linearPend(t,x,b,omega_0), t, x0);
 [~, xNL] = ode45(@(t,x) nonLinearPend(t,x,b,omega_0, Kr, r), t, x0);
 
@@ -39,7 +41,7 @@ plot(t, xL(:,1)*r2d, 'r');
 hold on
 plot(t, xNL(:,1)*r2d, 'bo')
 grid on;
-xlim([0 5]);
+xlim([ti tf]);
 xlabel("Seconds");
 ylabel("\theta (deg)");
 title("Sanity Check!");
@@ -64,7 +66,7 @@ y_pos = -cos(xNL(:,1));
 
 figure;
 axis equal
-axis([-1.2 1.2 -1.2 0.2])
+axis([-1.2 1.2 -1.2 1.2])
 grid on
 hold on
 
@@ -85,12 +87,13 @@ function xDot = nonLinearPend(t, x, b, omega_0, Kr, r)
     
     % u = -7*x(1)-8*x(2); % state feedback
     % u = -7*x(1)-8*x(2) + Kr*r; % state feedback w/ reference tracking
-    % u = 0;
+
+    u = 0;
     xDot = [x(2); -omega_0^2*sin(x(1)) + b*u];
 end
 
 function xDot = linearPend(t, x, b, omega_0)
-    u = -7*x(1)-8*x(2); % lei de controle
-    % u = 0;
+    % u = -7*x(1)-8*x(2); % lei de controle
+    u = 0;
     xDot = [x(2); -omega_0^2*x(1) + b*u];
 end
